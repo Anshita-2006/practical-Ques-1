@@ -1,4 +1,3 @@
-// Example: Fetching posts from JSONPlaceholder (a free public API)
 
 async function fetchPosts() {
   try {
@@ -7,14 +6,12 @@ async function fetchPosts() {
     
     // Convert response to JSON
     const data = await response.json();
-    
-    // Display the first 5 posts in the console
+  
     console.log("Fetched Posts:");
     data.slice(0, 5).forEach(post => {
       console.log(`ID: ${post.id}, Title: ${post.title}`);
     });
     
-    // Optionally, render results in the DOM
     const container = document.getElementById('posts');
     data.slice(0, 5).forEach(post => {
       const div = document.createElement('div');
@@ -27,5 +24,5 @@ async function fetchPosts() {
   }
 }
 
-// Call the function
+
 fetchPosts();
